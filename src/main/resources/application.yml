@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: student-assessment-tracker
+  # Optionally load a local ".env" file (KEY=VALUE lines) from the project folder.
+  config:
+    import: "optional:file:.env[.properties]"
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:assessment_db}?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: ${DB_USER:assessment_user}
+    password: ${DB_PASSWORD:change_me_local_only}
+  jpa:
+    hibernate:
+      ddl-auto: update          # Simple local setup; Hibernate creates/updates the tables.
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+server:
+  port: 8080
+
+app:
+  public-url: ${APP_PUBLIC_URL:http://localhost:8080}
+  password-reset:
+    dev-mode: ${PASSWORD_RESET_DEV_MODE:false}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+  api-docs:
+    path: /v3/api-docs

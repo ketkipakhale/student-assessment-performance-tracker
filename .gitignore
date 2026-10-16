@@ -1,0 +1,23 @@
+# Build output
+target/
+*.class
+*.log
+
+# Secrets / local environment (never commit these)
+.env
+*.env.local
+
+# IDEs
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+.classpath
+.project
+.settings/
+.factorypath
+
+# OS
+.DS_Store
+Thumbs.db
+HELP.md

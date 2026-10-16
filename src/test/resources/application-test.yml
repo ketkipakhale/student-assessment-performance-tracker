@@ -1,0 +1,17 @@
+# Used by tests only: in-memory H2 database.
+spring:
+  datasource:
+    url: jdbc:h2:mem:assessment_test;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+app:
+  security:
+    enabled: false
+  password-reset:
+    dev-mode: true
+  demo:
+    seed-enabled: false

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assessly | Student performance</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/">Assessly<span>.</span></a><div id="userNav"></div></header>
+<main class="shell">
+  <section id="authView" class="auth-grid">
+    <div class="hero"><p class="eyebrow">STUDENT ASSESSMENT TRACKER</p><h1>Make every attempt count.</h1><p>Build focused assessments, practise with confidence, and turn results into progress.</p></div>
+    <div class="card auth-card"><div class="tabs"><button class="tab active" data-tab="login">Sign in</button><button class="tab" data-tab="register">Create account</button></div>
+      <form id="loginForm"><h2>Welcome back</h2><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Password<input name="password" type="password" required autocomplete="current-password"></label><button class="primary" type="submit">Sign in</button><button id="forgotLink" class="link-button" type="button">Forgot password?</button></form>
+      <form id="registerForm" hidden><h2>Join as a student</h2><label>Full name<input name="fullName" required maxlength="150"></label><label>Email<input name="email" type="email" required></label><label>Password<input name="password" type="password" minlength="8" required autocomplete="new-password"></label><button class="primary" type="submit">Create student account</button></form>
+      <form id="forgotForm" hidden><h2>Reset your password</h2><p class="muted">Enter your email. We will show the same confirmation whether or not the account exists.</p><label>Email<input name="email" type="email" required autocomplete="email"></label><button class="primary" type="submit">Request reset link</button><button id="backToLogin" class="link-button" type="button">Back to sign in</button></form>
+      <form id="resetForm" hidden><h2>Choose a new password</h2><label>New password<input name="password" type="password" minlength="8" required autocomplete="new-password"></label><label>Confirm password<input name="confirmPassword" type="password" minlength="8" required autocomplete="new-password"></label><button class="primary" type="submit">Reset password</button></form>
+      <p id="authMessage" class="message"></p>
+    </div>
+  </section>
+  <section id="dashboard" hidden><div id="flash" class="message"></div><div class="page-heading"><div><p class="eyebrow" id="roleLabel"></p><h1 id="dashboardTitle"></h1></div><button id="logoutButton" class="button secondary">Sign out</button></div><div id="dashboardContent"></div></section>
+</main>
+<template id="adminTemplate"><div class="toolbar"><button id="newAssessment" class="primary">New assessment</button><span class="muted">Drafts stay private until published.</span></div><div id="adminList" class="cards"></div><div id="builder" class="card" hidden></div></template>
+<script src="/app.js"></script>
+</body>
+</html>
